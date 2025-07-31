@@ -8,10 +8,10 @@ body {
     flex-wrap: wrap;
     width: 800px;
     height: 800px;
+    border:1px solid black;
 }
 
 .grid-cell {
-    border: 1px solid black;
-    height: 48px;
-    width: 48px;
+    height: 50px;
+    width: 50px;
 }
