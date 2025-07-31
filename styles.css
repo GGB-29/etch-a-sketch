@@ -1,6 +1,8 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #grid-container {
@@ -14,4 +16,12 @@ body {
 .grid-cell {
     height: 50px;
     width: 50px;
+}
+
+#resize{
+    margin: 32px;
+    padding: 8px 32px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: system-ui;
 }
