@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 800px;
+}
+
+.grid-cell {
+    border: 1px solid black;
+    height: 48px;
+    width: 48px;
+}
