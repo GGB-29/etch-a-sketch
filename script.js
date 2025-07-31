@@ -41,6 +41,9 @@ function addCellEventListeners(cell) {
 function getValidSize() {
     let newSize = prompt('Enter new grid height: ');
     while (!(newSize > 0) || !(newSize <= 100)) {
+        if (newSize === null) {
+            break;
+        }
         alert('Grid height must be between 1 and 100');
         newSize = prompt('Enter new grid height: ');
     }
