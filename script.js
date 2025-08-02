@@ -22,20 +22,32 @@ function createGrid(height, width) {
     }
 }
 
-function changeCellColour(cell, type) {
-    switch (type) {
-        case 'enter':
-            cell.style.backgroundColor = 'grey';
-            break;
-        case 'leave':
-            cell.style.backgroundColor = 'light-grey';
-            break;
+function changeCellColour(cell) {
+    let bgColor = getComputedStyle(cell).backgroundColor;
+
+    if (bgColor === 'rgb(255, 255, 255)') {
+        console.log('te');
+        cell.style.backgroundColor = getRandomColor();
+    } else {
+        let currentOpacity = parseFloat(cell.style.opacity);
+        if (isNaN(currentOpacity)) {
+            currentOpacity = 1;
+        }
+        cell.style.opacity = Math.max(currentOpacity - 0.1, 0);
     }
 }
 
+function getRandomColor() {
+    const chars = 'ABCDEF0123456789'
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += chars[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 function addCellEventListeners(cell) {
-    cell.addEventListener('mouseenter', () => changeCellColour(cell, 'enter'));
-    cell.addEventListener('mouseleave', () => changeCellColour(cell, 'leave'));
+    cell.addEventListener('mouseenter', () => changeCellColour(cell));
 }
 
 function getValidSize() {
